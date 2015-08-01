@@ -6,6 +6,15 @@ module.exports = (grunt) ->
 		# Get the project package file
 		pkg: grunt.file.readJSON 'package.json'
 
+		# Compile less files
+		less:
+			compile:
+				options:
+					compress: true
+					banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+				files:
+					'lib/css/styles.css': 'lib/less/styles.less'
+
 		# Compile CoffeeScript
 		coffee:
 			compile:
@@ -40,6 +49,9 @@ module.exports = (grunt) ->
 			coffee:
 				files: '<%= coffee.compile.src %>'
 				tasks: ['coffee', 'concat', 'uglify']
+			less:
+				files: ['lib/less/styles.less']
+				tasks: ['less']
 
 
 	# load plugins
@@ -47,6 +59,7 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-watch'
 	grunt.loadNpmTasks 'grunt-contrib-concat'
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
+	grunt.loadNpmTasks 'grunt-contrib-less'
 
 	# Tasks
-	grunt.registerTask 'default', ['coffee', 'concat', 'uglify', 'watch']
+	grunt.registerTask 'default', ['coffee', 'concat', 'uglify', 'less', 'watch']

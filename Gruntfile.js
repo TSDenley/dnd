@@ -3,6 +3,17 @@
   module.exports = function(grunt) {
     grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
+      less: {
+        compile: {
+          options: {
+            compress: true,
+            banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+          },
+          files: {
+            'lib/css/styles.css': 'lib/less/styles.less'
+          }
+        }
+      },
       coffee: {
         compile: {
           expand: true,
@@ -41,6 +52,10 @@
         coffee: {
           files: '<%= coffee.compile.src %>',
           tasks: ['coffee', 'concat', 'uglify']
+        },
+        less: {
+          files: ['lib/less/styles.less'],
+          tasks: ['less']
         }
       }
     });
@@ -48,7 +63,8 @@
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    return grunt.registerTask('default', ['coffee', 'concat', 'uglify', 'watch']);
+    grunt.loadNpmTasks('grunt-contrib-less');
+    return grunt.registerTask('default', ['coffee', 'concat', 'uglify', 'less', 'watch']);
   };
 
 }).call(this);
