@@ -10,7 +10,7 @@ module.exports = (grunt) ->
 				cwd: 'lib/coffee'
 				src: ['**/*.coffee']
 				dest: 'lib/js'
-				ext: '.js'
+				ext: '.coffee.js'
 				options:
 					bare: true
 					preserve_dirs: true
