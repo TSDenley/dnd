@@ -37,13 +37,9 @@ module.exports = (grunt) ->
 
 		# Watch for file changes
 		watch:
-			html:
-				files: ['**/*.html']
 			coffee:
 				files: '<%= coffee.compile.src %>'
 				tasks: ['coffee', 'concat', 'uglify']
-			options:
-				livereload: true
 
 
 	# load plugins
@@ -53,4 +49,4 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-uglify'
 
 	# Tasks
-	grunt.registerTask 'default', ['coffee', 'watch', 'concat', 'uglify']
+	grunt.registerTask 'default', ['coffee', 'concat', 'uglify', 'watch']

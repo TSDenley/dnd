@@ -38,15 +38,9 @@
         }
       },
       watch: {
-        html: {
-          files: ['**/*.html']
-        },
         coffee: {
           files: '<%= coffee.compile.src %>',
           tasks: ['coffee', 'concat', 'uglify']
-        },
-        options: {
-          livereload: true
         }
       }
     });
@@ -54,7 +48,7 @@
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    return grunt.registerTask('default', ['coffee', 'watch', 'concat', 'uglify']);
+    return grunt.registerTask('default', ['coffee', 'concat', 'uglify', 'watch']);
   };
 
 }).call(this);
