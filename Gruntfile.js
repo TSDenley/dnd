@@ -2,6 +2,7 @@
 (function() {
   module.exports = function(grunt) {
     grunt.initConfig({
+      pkg: grunt.file.readJSON('package.json'),
       coffee: {
         compile: {
           expand: true,
@@ -15,13 +16,34 @@
           }
         }
       },
+      concat: {
+        options: {
+          separator: ';',
+          sourceMap: true
+        },
+        dist: {
+          src: ['lib/js/*.coffee.js'],
+          dest: 'lib/js/build.js'
+        }
+      },
+      uglify: {
+        options: {
+          banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
+          sourceMap: true
+        },
+        dist: {
+          files: {
+            'lib/js/build.min.js': ['<%= concat.dist.dest %>']
+          }
+        }
+      },
       watch: {
         html: {
           files: ['**/*.html']
         },
         coffee: {
           files: '<%= coffee.compile.src %>',
-          tasks: ['coffee']
+          tasks: ['coffee', 'concat', 'uglify']
         },
         options: {
           livereload: true
@@ -30,7 +52,9 @@
     });
     grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    return grunt.registerTask('default', ['coffee', 'watch']);
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    return grunt.registerTask('default', ['coffee', 'watch', 'concat', 'uglify']);
   };
 
 }).call(this);
