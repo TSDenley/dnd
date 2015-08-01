@@ -14,9 +14,23 @@
             preserve_dirs: true
           }
         }
+      },
+      watch: {
+        html: {
+          files: ['**/*.html']
+        },
+        coffee: {
+          files: '<%= coffee.compile.src %>',
+          tasks: ['coffee']
+        },
+        options: {
+          livereload: true
+        }
       }
     });
-    return grunt.loadNpmTasks('grunt-contrib-coffee');
+    grunt.loadNpmTasks('grunt-contrib-coffee');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    return grunt.registerTask('default', ['coffee', 'watch']);
   };
 
 }).call(this);
