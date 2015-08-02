@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>CoffeeScript/Grunt Tests</title>
+	<title>DnD</title>
 	<link rel="stylesheet" href="lib/css/styles.css">
 </head>
 <body>
@@ -10,10 +10,109 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1 class="h1">Lorem Ipsum</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<h2 class="h2">Ability Score</h2>
+				<form id="ability-form" class="ability-form form-horizontal">
+					<div class="form-group">
+						<label for="points-remaining" class="col-sm-4 text-right control-label">Points remaining</label>
+						<p class="form-control-static col-sm-5" id="points-remaining">27</p>
+					</div>
+
+					<div class="form-group">
+						<label for="str" class="text-right control-label col-sm-4">STR</label>
+						<div class="col-sm-5">
+							<select class="form-control ability-select" name="str" id="str">
+								<option value="0">8 - points cost 0 - modifier -1</option>
+								<option value="1">9 - points cost 1 - modifier -1</option>
+								<option value="2">10 - points cost 2 - modifier 0</option>
+								<option value="3">11 - points cost 3 - modifier 0</option>
+								<option value="4">12 - points cost 4 - modifier +1</option>
+								<option value="5">13 - points cost 5 - modifier +1</option>
+								<option value="7">14 - points cost 7 - modifier +2</option>
+								<option value="9">15 - points cost 9 - modifier +2</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="text-right control-label col-sm-4" for="dex">DEX</label>
+						<div class="col-sm-5">
+							<select class="form-control ability-select" name="dex" id="dex">
+								<option value="0">8 - points cost 0 - modifier -1</option>
+								<option value="1">9 - points cost 1 - modifier -1</option>
+								<option value="2">10 - points cost 2 - modifier 0</option>
+								<option value="3">11 - points cost 3 - modifier 0</option>
+								<option value="4">12 - points cost 4 - modifier +1</option>
+								<option value="5">13 - points cost 5 - modifier +1</option>
+								<option value="7">14 - points cost 7 - modifier +2</option>
+								<option value="9">15 - points cost 9 - modifier +2</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="text-right control-label col-sm-4" for="con">CON</label>
+						<div class="col-sm-5">
+							<select class="form-control ability-select" name="con" id="con">
+								<option value="0">8 - points cost 0 - modifier -1</option>
+								<option value="1">9 - points cost 1 - modifier -1</option>
+								<option value="2">10 - points cost 2 - modifier 0</option>
+								<option value="3">11 - points cost 3 - modifier 0</option>
+								<option value="4">12 - points cost 4 - modifier +1</option>
+								<option value="5">13 - points cost 5 - modifier +1</option>
+								<option value="7">14 - points cost 7 - modifier +2</option>
+								<option value="9">15 - points cost 9 - modifier +2</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="text-right control-label col-sm-4" for="int">INT</label>
+						<div class="col-sm-5">
+							<select class="form-control ability-select" name="int" id="int">
+								<option value="0">8 - points cost 0 - modifier -1</option>
+								<option value="1">9 - points cost 1 - modifier -1</option>
+								<option value="2">10 - points cost 2 - modifier 0</option>
+								<option value="3">11 - points cost 3 - modifier 0</option>
+								<option value="4">12 - points cost 4 - modifier +1</option>
+								<option value="5">13 - points cost 5 - modifier +1</option>
+								<option value="7">14 - points cost 7 - modifier +2</option>
+								<option value="9">15 - points cost 9 - modifier +2</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="text-right control-label col-sm-4" for="wiz">WIS</label>
+						<div class="col-sm-5">
+							<select class="form-control ability-select" name="wiz" id="wiz">
+								<option value="0">8 - points cost 0 - modifier -1</option>
+								<option value="1">9 - points cost 1 - modifier -1</option>
+								<option value="2">10 - points cost 2 - modifier 0</option>
+								<option value="3">11 - points cost 3 - modifier 0</option>
+								<option value="4">12 - points cost 4 - modifier +1</option>
+								<option value="5">13 - points cost 5 - modifier +1</option>
+								<option value="7">14 - points cost 7 - modifier +2</option>
+								<option value="9">15 - points cost 9 - modifier +2</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="text-right control-label col-sm-4" for="cha">CHA</label>
+						<div class="col-sm-5">
+							<select class="form-control ability-select" name="cha" id="cha">
+								<option value="0">8 - points cost 0 - modifier -1</option>
+								<option value="1">9 - points cost 1 - modifier -1</option>
+								<option value="2">10 - points cost 2 - modifier 0</option>
+								<option value="3">11 - points cost 3 - modifier 0</option>
+								<option value="4">12 - points cost 4 - modifier +1</option>
+								<option value="5">13 - points cost 5 - modifier +1</option>
+								<option value="7">14 - points cost 7 - modifier +2</option>
+								<option value="9">15 - points cost 9 - modifier +2</option>
+							</select>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
