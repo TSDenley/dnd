@@ -10,8 +10,28 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h2 class="h2">Ability Score</h2>
-				<form id="ability-form" class="ability-form form-horizontal">
+				<form id="charactor-form" class="charactor-form form-horizontal">
+
+					<h2 class="h2">Race</h2>
+
+					<div class="form-group">
+						<label for="race-select" class="col-sm-4 text-right control-label">Choose race</label>
+						<div class="col-sm-5">
+							<select name="race-select" id="race-select" class="form-control">
+								<option value="Human">Human</option>
+								<option value="Dwarf">Dwarf</option>
+								<option value="Elf">Elf</option>
+								<option value="Half-Elf">Half-Elf</option>
+								<option value="Halfling">Halfling</option>
+								<option value="Half-Orc">Half-Orc</option>
+								<option value="Gnome">Gnome</option>
+								<option value="Dragonborn">Dragonborn</option>
+								<option value="Tiefling">Tiefling</option>
+							</select>
+						</div>
+					</div>
+
+					<h2 class="h2">Ability Score</h2>
 					<div class="form-group">
 						<label for="points-remaining" class="col-sm-4 text-right control-label">Points remaining</label>
 						<p class="form-control-static col-sm-5" id="points-remaining">27</p>
@@ -112,6 +132,7 @@
 							</select>
 						</div>
 					</div>
+
 				</form>
 			</div>
 		</div>
