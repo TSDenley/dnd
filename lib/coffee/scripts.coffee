@@ -28,15 +28,15 @@ updateAbilityScoreTable = () ->
 
 	# Racial bonuses
 	for ability, value of raceData
-		data[ability] = Number value
+		data[ability] = if Number value > 0 then Number value else null
 
 	# Calc adjusted scores (bace + racial)
-	data["adjusted-str"] = str + data["bonus-str"]
-	data["adjusted-dex"] = dex + data["bonus-dex"]
-	data["adjusted-con"] = con + data["bonus-con"]
-	data["adjusted-int"] = int + data["bonus-int"]
-	data["adjusted-wis"] = wis + data["bonus-wis"]
-	data["adjusted-cha"] = cha + data["bonus-cha"]
+	data["adjusted-str"] = if data["bonus-str"] > 0 then str + data["bonus-str"] else null
+	data["adjusted-dex"] = if data["bonus-dex"] > 0 then dex + data["bonus-dex"] else null
+	data["adjusted-con"] = if data["bonus-con"] > 0 then con + data["bonus-con"] else null
+	data["adjusted-int"] = if data["bonus-int"] > 0 then int + data["bonus-int"] else null
+	data["adjusted-wis"] = if data["bonus-wis"] > 0 then wis + data["bonus-wis"] else null
+	data["adjusted-cha"] = if data["bonus-cha"] > 0 then cha + data["bonus-cha"] else null
 
 	# Calc modifiers
 
