@@ -10,12 +10,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<form id="charactor-form" class="charactor-form form-horizontal">
 
+				<form id="charactor-form" class="charactor-form form-horizontal">
 					<h2 class="h2">Race</h2>
 
 					<div class="form-group">
-						<label for="race-select" class="col-sm-4 text-right control-label">Choose race</label>
+						<label for="race-select" class="col-sm-2 text-right control-label">Choose race</label>
 						<div class="col-sm-5">
 							<select name="race-select" id="race-select" class="form-control">
 								<option value="0">--</option>
@@ -34,8 +34,9 @@
 
 					<h2 class="h2">Ability Score</h2>
 					<div class="form-group">
-						<label for="points-remaining" class="col-sm-4 text-right control-label">Points remaining</label>
-						<p class="form-control-static col-sm-5" id="points-remaining">27</p>
+						<div class="col-sm-5 col-sm-offset-4">
+							<p class="form-control-static"><b>Points remaining</b> <span id="points-remaining">27</span></p>
+						</div>
 					</div>
 
 					<div class="form-group">
@@ -103,9 +104,9 @@
 					</div>
 
 					<div class="form-group">
-						<label class="text-right control-label col-sm-4" for="wiz">WIS</label>
+						<label class="text-right control-label col-sm-4" for="wis">WIS</label>
 						<div class="col-sm-5">
-							<select class="form-control ability-select" name="wiz" id="wiz">
+							<select class="form-control ability-select" name="wis" id="wis">
 								<option value="0">8 - points cost 0 - modifier -1</option>
 								<option value="1">9 - points cost 1 - modifier -1</option>
 								<option value="2">10 - points cost 2 - modifier 0</option>
@@ -134,10 +135,67 @@
 						</div>
 					</div>
 
-				</form>
-			</div>
-		</div>
-	</div>
+					<table id="ability-score-table" class="table table-striped">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Base score</th>
+								<th>Racial bonuses</th>
+								<th>Adjusted score</th>
+								<th>Modifer</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>STR</td>
+								<td class="base-str">0</td>
+								<td class="bonus-str">0</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>DEX</td>
+								<td class="base-dex">0</td>
+								<td class="bonus-dex">0</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>CON</td>
+								<td class="base-con">0</td>
+								<td class="bonus-con">0</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>INT</td>
+								<td class="base-int">0</td>
+								<td class="bonus-int">0</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>WIS</td>
+								<td class="base-wis">0</td>
+								<td class="bonus-wis">0</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>CHA</td>
+								<td class="base-cha">0</td>
+								<td class="bonus-cha">0</td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+
+				</form><!--#charactor-form-->
+
+			</div><!--col-->
+		</div><!--row-->
+	</div><!--container-->
 
 <script src="lib/js/build.min.js"></script>
 </body>

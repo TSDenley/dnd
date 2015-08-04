@@ -1,9 +1,25 @@
 abilitySelects = document.querySelectorAll '.ability-select'
+abilityTable = document.getElementById 'ability-score-table'
 
 
 ###
-	Calc ability points remaining and update counter HTML.
-	Add and error class to counter if overspent points.
+Update ability table with chosen scores
+###
+updateBaseAbilityScore = () ->
+	data =
+		"base-str": document.getElementById('str').value
+		"base-dex": document.getElementById('dex').value
+		"base-con": document.getElementById('con').value
+		"base-int": document.getElementById('int').value
+		"base-wis": document.getElementById('wis').value
+		"base-cha": document.getElementById('cha').value
+
+	Transparency.render abilityTable, data
+
+
+###
+Calc ability points remaining and update counter HTML.
+Add and error class to counter if overspent points.
 ###
 calcAbilityScore = () ->
 	totalScore = 0
@@ -22,83 +38,27 @@ calcAbilityScore = () ->
 
 	counter.innerHTML = pointsRemaining
 
+	updateBaseAbilityScore()
+
 
 # Bind calc function on select
 for ability in abilitySelects
 	ability.addEventListener 'change', calcAbilityScore
 
 
-# Racial ability bonuses
-raceBonuses =
-	"Human":
-		STR: 1
-		DEX: 1
-		CON: 1
-		INT: 1
-		WIS: 1
-		CHA: 1
-	"Dwarf":
-		STR: 0
-		DEX: 0
-		CON: 2
-		INT: 0
-		WIS: 0
-		CHA: 0
-	"Elf":
-		STR: 0
-		DEX: 2
-		CON: 0
-		INT: 0
-		WIS: 0
-		CHA: 0
-	"Half-Elf":
-		STR: 0
-		DEX: 0
-		CON: 0
-		INT: 0
-		WIS: 0
-		CHA: 2
-	"Halfling":
-		STR: 0
-		DEX: 0
-		CON: 0
-		INT: 0
-		WIS: 0
-		CHA: 0
-	"Half-Orc":
-		STR: 0
-		DEX: 0
-		CON: 0
-		INT: 0
-		WIS: 0
-		CHA: 0
-	"Gnome":
-		STR: 0
-		DEX: 0
-		CON: 0
-		INT: 2
-		WIS: 0
-		CHA: 0
-	"Dragonborn":
-		STR: 0
-		DEX: 0
-		CON: 0
-		INT: 0
-		WIS: 0
-		CHA: 0
-	"Tiefling":
-		STR: 0
-		DEX: 0
-		CON: 0
-		INT: 0
-		WIS: 0
-		CHA: 0
-
 raceSelect = document.getElementById 'race-select'
 
+###
+Lookup and apply ability bonuses of the chosen race
+###
 applyRacialBonus = () ->
 	chosenRace = raceSelect.value
 
-	console.log raceBonuses[chosenRace] unless chosenRace is "0"
+	unless chosenRace is "0"
+		raceData = raceBonuses[chosenRace]
+		console.log raceData
+
+		Transparency.render abilityTable, raceData
+
 
 raceSelect.addEventListener 'change', applyRacialBonus

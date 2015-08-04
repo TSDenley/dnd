@@ -33,7 +33,7 @@
           sourceMap: true
         },
         dist: {
-          src: ['lib/js/*.coffee.js'],
+          src: ['lib/js/transparency.js', 'lib/js/*.coffee.js'],
           dest: 'lib/js/build.js'
         }
       },
