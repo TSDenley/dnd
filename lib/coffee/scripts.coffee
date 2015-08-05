@@ -18,13 +18,7 @@ updateAbilityScoreTable = () ->
 	wis = Number document.getElementById('wis').value
 	cha = Number document.getElementById('cha').value
 
-	data =
-		"base-str": str
-		"base-dex": dex
-		"base-con": con
-		"base-int": int
-		"base-wis": wis
-		"base-cha": cha
+	data = {}
 
 	# Racial bonuses
 	for ability, value of raceData

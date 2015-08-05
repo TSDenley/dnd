@@ -12,10 +12,11 @@
 			<div class="col-sm-12">
 
 				<form id="charactor-form" class="charactor-form form-horizontal">
+
 					<h2 class="h2">Race</h2>
 
 					<div class="form-group">
-						<label for="race-select" class="col-sm-2 text-right control-label">Choose race</label>
+						<label for="race-select" class="col-sm-2 control-label">Choose race</label>
 						<div class="col-sm-5">
 							<select name="race-select" id="race-select" class="form-control">
 								<option value="0">--</option>
@@ -33,113 +34,18 @@
 					</div>
 
 					<h2 class="h2">Ability Score</h2>
-					<div class="form-group">
-						<div class="col-sm-5 col-sm-offset-4">
-							<p class="form-control-static"><b>Points remaining</b> <span id="points-remaining">27</span></p>
-						</div>
+
+					<div class="form-group col-sm-12">
+						<p class="form-control-static"><b>Points remaining</b> <span id="points-remaining">27</span></p>
 					</div>
 
-					<div class="form-group">
-						<label for="str" class="text-right control-label col-sm-4">STR</label>
-						<div class="col-sm-5">
-							<select class="form-control ability-select" name="str" id="str">
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-								<option value="13">13</option>
-								<option value="14">14</option>
-								<option value="15">15</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="text-right control-label col-sm-4" for="dex">DEX</label>
-						<div class="col-sm-5">
-							<select class="form-control ability-select" name="dex" id="dex">
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-								<option value="13">13</option>
-								<option value="14">14</option>
-								<option value="15">15</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="text-right control-label col-sm-4" for="con">CON</label>
-						<div class="col-sm-5">
-							<select class="form-control ability-select" name="con" id="con">
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-								<option value="13">13</option>
-								<option value="14">14</option>
-								<option value="15">15</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="text-right control-label col-sm-4" for="int">INT</label>
-						<div class="col-sm-5">
-							<select class="form-control ability-select" name="int" id="int">
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-								<option value="13">13</option>
-								<option value="14">14</option>
-								<option value="15">15</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="text-right control-label col-sm-4" for="wis">WIS</label>
-						<div class="col-sm-5">
-							<select class="form-control ability-select" name="wis" id="wis">
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-								<option value="13">13</option>
-								<option value="14">14</option>
-								<option value="15">15</option>
-							</select>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="text-right control-label col-sm-4" for="cha">CHA</label>
-						<div class="col-sm-5">
-							<select class="form-control ability-select" name="cha" id="cha">
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-								<option value="13">13</option>
-								<option value="14">14</option>
-								<option value="15">15</option>
-							</select>
-						</div>
-					</div>
 
 					<table id="ability-score-table" class="table table-striped">
 						<thead>
 							<tr>
 								<th></th>
 								<th>Base score</th>
+								<th>Points cost</th>
 								<th>Racial bonuses</th>
 								<th>Adjusted score</th>
 								<th>Modifer</th>
@@ -147,43 +53,115 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td>STR</td>
-								<td class="base-str">8</td>
+								<td><b>STR</b></td>
+								<td class="base-str">
+									<select class="form-control ability-select" name="str" id="str">
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+									</select>
+								</td>
+								<td class="points-cost"></td>
 								<td class="bonus-str"></td>
 								<td class="adjusted-str"></td>
 								<td></td>
 							</tr>
 							<tr>
-								<td>DEX</td>
-								<td class="base-dex">8</td>
+								<td><b>DEX</b></td>
+								<td class="base-dex">
+									<select class="form-control ability-select" name="dex" id="dex">
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+									</select>
+								</td>
+								<td class="points-cost"></td>
 								<td class="bonus-dex"></td>
 								<td class="adjusted-dex"></td>
 								<td></td>
 							</tr>
 							<tr>
-								<td>CON</td>
-								<td class="base-con">8</td>
+								<td><b>CON</b></td>
+								<td class="base-con">
+									<select class="form-control ability-select" name="con" id="con">
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+									</select>
+								</td>
+								<td class="points-cost"></td>
 								<td class="bonus-con"></td>
 								<td class="adjusted-con"></td>
 								<td></td>
 							</tr>
 							<tr>
-								<td>INT</td>
-								<td class="base-int">8</td>
+								<td><b>INT</b></td>
+								<td class="base-int">
+									<select class="form-control ability-select" name="int" id="int">
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+									</select>
+								</td>
+								<td class="points-cost"></td>
 								<td class="bonus-int"></td>
 								<td class="adjusted-int"></td>
 								<td></td>
 							</tr>
 							<tr>
-								<td>WIS</td>
-								<td class="base-wis">8</td>
+								<td><b>WIS</b></td>
+								<td class="base-wis">
+									<select class="form-control ability-select" name="wis" id="wis">
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+									</select>
+								</td>
+								<td class="points-cost"></td>
 								<td class="bonus-wis"></td>
 								<td class="adjusted-wis"></td>
 								<td></td>
 							</tr>
 							<tr>
-								<td>CHA</td>
-								<td class="base-cha">8</td>
+								<td><b>CHA</b></td>
+								<td class="base-cha">
+									<select class="form-control ability-select" name="cha" id="cha">
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+									</select>
+								</td>
+								<td class="points-cost"></td>
 								<td class="bonus-cha"></td>
 								<td class="adjusted-cha"></td>
 								<td></td>
