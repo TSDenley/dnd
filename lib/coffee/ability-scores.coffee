@@ -3,6 +3,15 @@ Ability score data.
 Score, points cost & modifier.
 ###
 
+abilities = [
+	'str'
+	'dex'
+	'con'
+	'int'
+	'wis'
+	'cha'
+]
+
 abilityScore =
 	8 :
 		pointsCost: 0
