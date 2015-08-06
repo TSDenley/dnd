@@ -18,6 +18,7 @@ calcModifier = (score) ->
 
 ###
 Update ability table with chosen scores
+@uses calcModifier()
 ###
 updateAbilityScoreTable = () ->
 
@@ -39,6 +40,10 @@ updateAbilityScoreTable = () ->
 		int: int
 		wis: wis
 		cha: cha
+
+	# Points cost
+	for ability in abilities
+		data[ability + '-points'] = abilityScore[data[ability]].pointsCost
 
 	# Racial bonuses
 	for ability, value of raceData
