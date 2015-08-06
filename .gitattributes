@@ -3,3 +3,4 @@
 *.min.js -diff
 *.js.map -diff
 *.min.js.map -diff
+/lib/css/styles.css -diff

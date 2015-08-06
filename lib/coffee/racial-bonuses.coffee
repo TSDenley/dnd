@@ -34,15 +34,15 @@ raceBonuses =
 		other: 2
 	"Halfling":
 		"bonus-str": 0
-		"bonus-dex": 0
+		"bonus-dex": 2
 		"bonus-con": 0
 		"bonus-int": 0
 		"bonus-wis": 0
 		"bonus-cha": 0
 	"Half-Orc":
-		"bonus-str": 0
+		"bonus-str": 2
 		"bonus-dex": 0
-		"bonus-con": 0
+		"bonus-con": 1
 		"bonus-int": 0
 		"bonus-wis": 0
 		"bonus-cha": 0
@@ -54,16 +54,16 @@ raceBonuses =
 		"bonus-wis": 0
 		"bonus-cha": 0
 	"Dragonborn":
-		"bonus-str": 0
+		"bonus-str": 2
 		"bonus-dex": 0
 		"bonus-con": 0
 		"bonus-int": 0
 		"bonus-wis": 0
-		"bonus-cha": 0
+		"bonus-cha": 1
 	"Tiefling":
 		"bonus-str": 0
 		"bonus-dex": 0
 		"bonus-con": 0
-		"bonus-int": 0
+		"bonus-int": 1
 		"bonus-wis": 0
-		"bonus-cha": 0
+		"bonus-cha": 2
